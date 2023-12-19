@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 
 import com.qa.opencart.base.BaseTest;
 import com.qa.opencart.constants.AppConstants;
+import com.qa.opencart.listeners.TestAllureListener;
 
 import io.qameta.allure.Description;
 import io.qameta.allure.Epic;
@@ -17,6 +18,8 @@ import io.qameta.allure.Story;
 @Epic("Epic 100: Design open cart login page")
 @Story("US 101: Login Page features")
 @Feature("F50: Feature Login page")
+@Listeners(TestAllureListener.class) // if you manually write this allure annotation, with some windows system it will get "Cannot be resolved to a type". 
+// So, to prevent this error you will need to delete .class and some parts of listener and then press CTRL + SPACE and manually write .class
 public class LoginPageTest extends BaseTest{
 
 	@Description("This is login page title test")
