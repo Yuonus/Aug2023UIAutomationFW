@@ -21,6 +21,7 @@ public class LoginPage {
 	private By loginErrorMessage = By.xpath("(//div[@id='account-login']/div)[1]");
 	
 	private By registerLink = By.linkText("Register");
+	private By s_Tech_RegisterLink = By.linkText("Register");
 	
 	// Page Constructor
 	public LoginPage(WebDriver driver) {
