@@ -22,6 +22,7 @@ public class LoginPage {
 	
 	private By registerLink = By.linkText("Register");
 	
+	
 	// Page Constructor
 	public LoginPage(WebDriver driver) {
 		this.driver = driver;
