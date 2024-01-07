@@ -45,11 +45,11 @@ public class ExtentReportListener implements ITestListener {
 		ExtentSparkReporter reporter = new ExtentSparkReporter(OUTPUT_FOLDER + FILE_NAME);
 		reporter.config().setReportName("Open Cart Automation Test Results");
 		extentReports.attachReporter(reporter);
-		extentReports.setSystemInfo("System", "Windows");
-		extentReports.setSystemInfo("Author", "S_Tech");
+		extentReports.setSystemInfo("System", "MAC");
+		extentReports.setSystemInfo("Author", "Naveen AutomationLabs");
 		extentReports.setSystemInfo("Build#", "1.1");
 		extentReports.setSystemInfo("Team", "OpenCart QA Team");
-		extentReports.setSystemInfo("Customer Name", "S_Tech Practicing Application");
+		extentReports.setSystemInfo("Customer Name", "NAL");
 		extentReports.setSystemInfo("ENV NAME", System.getProperty("env"));
 
 		return extentReports;
@@ -94,15 +94,8 @@ public class ExtentReportListener implements ITestListener {
 		String methodName = result.getMethod().getMethodName();
 		System.out.println((methodName + " passed!"));
 		test.get().pass("Test passed");
-//		test.get().pass(result.getThrowable(), MediaEntityBuilder.createScreenCaptureFromPath(DriverFactory.getScreenshot(methodName), methodName).build());
+		//test.get().pass(result.getThrowable(), MediaEntityBuilder.createScreenCaptureFromPath(DriverFactory.getScreenshot(methodName), methodName).build());
 		test.get().getModel().setEndTime(getTime(result.getEndMillis()));
-		
-		/* Note
-		 	We are not going to take the screen shots for passed tests, pretend if you are 200s tests and all are passing
-		 	the report will take 200 screenshots, and pretend each screenshot might take 1MB of the memory size. So, this
-		 	will take a lot of memory size. so that is why I have commented the screenshot line. But, still if you are 
-		 	having a manager who is asking for passed tests screenshots, then just uncomment it.
-		 */
 	}
 
 	public synchronized void onTestFailure(ITestResult result) {
